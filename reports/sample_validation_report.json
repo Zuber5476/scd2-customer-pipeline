@@ -1,0 +1,23 @@
+{
+  "source_event_count": 4,
+  "dimension_row_count": 4,
+  "customer_count": 2,
+  "current_row_count": 2,
+  "reject_count": 1,
+  "current_row_violations": [],
+  "overlapping_interval_violations": [],
+  "runs": [
+    {
+      "run_id": "4c2b67c5-e6c2-430e-832c-cd12628517c3",
+      "source_file": "customer_events.csv",
+      "status": "succeeded",
+      "input_count": 6,
+      "inserted_count": 4,
+      "duplicate_count": 1,
+      "rejected_count": 1,
+      "dimension_rows_written": 4,
+      "failure_reason": null
+    }
+  ],
+  "validation_passed": true
+}
