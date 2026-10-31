@@ -1,0 +1,9 @@
+# Design and Trade-offs
+
+1. **Immutable event ledger + timeline rebuild.** Accepted events are retained in `source_events`. For every customer touched by a batch, the pipeline sorts all that customer's events by normalized effective timestamp and rebuilds that customer's dimension. This is easy to reason about and correctly handles late-arriving changes for a small/medium assignment-scale dataset. It is less efficient than interval surgery for very large histories.
+2. **Deterministic surrogate keys.** The key is a hash of customer ID, effective start, and state hash. Reprocessing the same history yields the same keys. A late event can legitimately change the start boundary or source event for a version, so affected dimension rows may be replaced.
+3. **Same-time conflicting events.** Two different events for one customer at the exact same effective timestamp are ambiguous. The first accepted event wins; later conflicting events are quarantined. A production system should define a source-provided sequence/priority to order such events.
+4. **Repeated state updates.** Events are preserved in the event ledger, but consecutive identical states do not create redundant dimension versions.
+5. **Atomic batch processing.** Valid event inserts, dimension rebuilds, rejects, and success metrics commit in one transaction. A processing failure rolls back the batch; the run is marked failed separately. Retrying the file is safe.
+6. **Timestamp semantics.** Input timestamps must include a timezone and are normalized to UTC. `effective_to` is exclusive. The open-ended current sentinel is `9999-12-31T00:00:00Z`.
+7. **Local-first implementation.** SQLite avoids external services and credentials. For production scale, move the same logical model to a warehouse/lakehouse, use partitioning and incremental interval updates, and orchestrate with Airflow/Dagster/dbt as appropriate.
