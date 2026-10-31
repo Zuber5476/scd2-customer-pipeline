@@ -1,0 +1,10 @@
+{
+  "run_id": "998aa9f9-b0e6-4124-b9eb-78a10016330f",
+  "status": "succeeded",
+  "input_count": 100003,
+  "inserted_count": 100000,
+  "duplicate_count": 1,
+  "rejected_count": 2,
+  "dimension_rows_written": 100000,
+  "elapsed_seconds": 4.596629
+}
