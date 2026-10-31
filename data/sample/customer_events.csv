@@ -1,0 +1,7 @@
+event_id,customer_id,customer_name,email,city,segment,effective_at
+evt_001,cust_001,Asha Rao,asha@example.test,Tirupati,consumer,2025-01-01T00:00:00Z
+evt_002,cust_001,Asha Rao,asha@example.test,Hyderabad,consumer,2025-02-01T00:00:00Z
+evt_003,cust_001,Asha Rao,asha@example.test,Hyderabad,enterprise,2025-03-01T00:00:00Z
+evt_004,cust_002,Ravi Kumar,ravi@example.test,Chennai,small_business,2025-01-15T00:00:00Z
+evt_003,cust_001,Asha Rao,asha@example.test,Hyderabad,enterprise,2025-03-01T00:00:00Z
+evt_006,cust_003,Meera Das,meera@example.test,Bengaluru,vip_unknown,2025-02-10T00:00:00Z
