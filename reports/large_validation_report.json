@@ -1,0 +1,23 @@
+{
+  "source_event_count": 100000,
+  "dimension_row_count": 100000,
+  "customer_count": 33333,
+  "current_row_count": 33333,
+  "reject_count": 2,
+  "current_row_violations": [],
+  "overlapping_interval_violations": [],
+  "runs": [
+    {
+      "run_id": "998aa9f9-b0e6-4124-b9eb-78a10016330f",
+      "source_file": "events_100k.csv",
+      "status": "succeeded",
+      "input_count": 100003,
+      "inserted_count": 100000,
+      "duplicate_count": 1,
+      "rejected_count": 2,
+      "dimension_rows_written": 100000,
+      "failure_reason": null
+    }
+  ],
+  "validation_passed": true
+}
