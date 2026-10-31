@@ -1,0 +1,5 @@
+customer_id,customer_name,city,segment,effective_from,effective_to,is_current,source_event_id
+cust_001,Asha Rao,Tirupati,consumer,2025-01-01T00:00:00Z,2025-02-01T00:00:00Z,0,evt_001
+cust_001,Asha Rao,Hyderabad,consumer,2025-02-01T00:00:00Z,2025-03-01T00:00:00Z,0,evt_002
+cust_001,Asha Rao,Hyderabad,enterprise,2025-03-01T00:00:00Z,9999-12-31T00:00:00Z,1,evt_003
+cust_002,Ravi Kumar,Chennai,small_business,2025-01-15T00:00:00Z,9999-12-31T00:00:00Z,1,evt_004
